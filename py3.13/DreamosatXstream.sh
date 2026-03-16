@@ -1,21 +1,5 @@
 #!/bin/sh
 
-if [ -d /usr/lib/enigma2/python/Plugins/Extensions/DreamosatXstream ]; then
-echo "> paket kaldırılıyor lütfen bekleyin..."
-sleep 3s 
-
-
-if grep -q $package $status; then
-opkg remove $package > /dev/null 2>&1
-fi
-
-echo "*******************************************"
-echo "*         eski sürüm kaldırıldı         *"
-echo "*******************************************"
-sleep 3s
-
-else
-
 #Check and install dependencies
 python=$(python -c "import platform; print(platform.python_version())")
 
