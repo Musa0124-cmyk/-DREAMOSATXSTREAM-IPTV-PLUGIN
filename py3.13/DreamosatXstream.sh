@@ -1,4 +1,15 @@
 #!/bin/sh
+#remove unnecessary files and folders
+if [  -d "/CONTROL" ]; then
+rm -r  /CONTROL >/dev/null 2>&1
+fi
+rm -rf /control >/dev/null 2>&1
+rm -rf /postinst >/dev/null 2>&1
+rm -rf /preinst >/dev/null 2>&1
+rm -rf /prerm >/dev/null 2>&1
+rm -rf /postrm >/dev/null 2>&1
+rm -rf /tmp/*.ipk >/dev/null 2>&1
+rm -rf /tmp/*.tar.gz >/dev/null 2>&1
 
 #Check and install dependencies
 python=$(python -c "import platform; print(platform.python_version())")
@@ -61,8 +72,8 @@ for i in "${deps[@]}"; do
 done
 
 # Configuration
-plugin="MS"
-version="1.2"
+plugin="DreamosatXstream"
+version="2.30"
 targz_file="$plugin-$version.tar.gz"
 temp_dir="/tmp"
 
